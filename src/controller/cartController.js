@@ -45,7 +45,7 @@ const createCart = async function (req, res) {
         .status(400)
         .send({ status: false, message: "No product found" });
     }
-    const cart = await cartModel.findOne({ userId }).lean();
+    const cart = await cartModel.findOne({ userId })//.lean();
     if (cart) {
       if (!cartId) {
         return res
